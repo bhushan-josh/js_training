@@ -16,8 +16,8 @@ let obj = {
 const obj2 = {...obj,   //deep copy
   address:{
       ...obj.address,
-      details:[...obj.address.details]
+      details:['5',...obj.address.details.slice(1)]
   }
 }
-obj2.address.details[0] = '5';
+// obj2.address.details[0] = '5';
 console.log(obj2);
