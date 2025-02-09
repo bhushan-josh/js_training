@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <style>
+      .centre {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      h2 {
+        text-align: center;
+      }
+      .button1 {
+        padding: 10px 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="" id="loginForm" class="centre">
+      <h2>Create a New Blog Post</h2>
+      <br />
+
+      <label>Title</label>
+      <br />
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Enter your Username..."
+      />
+      <br />
+      <br />
+
+      <label>Job</label>
+      <br />
+      <input
+        type="text"
+        id="job"
+        class="form-control"
+        placeholder="Enter your Job.."
+      />
+      <br />
+      <br />
+
+      <button class="button1" type="submit">Submit</button>
+
+      <script>
+        let loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const job = document.getElementById("job").value;
+          const obj = {
+            name: name,
+            job: job,
+          };
+          fetch("https://reqres.in/api/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(obj),
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              console.log("Success:", res);
+              alert("Data sent successfully");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Error sending data");
+            });
+        });
+      </script>
+    </form>
+  </body>
+</html>
