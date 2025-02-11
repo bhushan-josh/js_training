@@ -8,7 +8,7 @@ async function getData() {
       throw new Error(`Response status: ${response.status}`);
     }
     const result = await response.json();
-    currentData = result.data;
+    currentData = result?.data;
     generateTable(result.data);
   } catch (error) {
     console.error(error.message);
@@ -48,7 +48,7 @@ function sortTable() {
 }
 
 function filterTable() {
-  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const searchInput = document.getElementById("searchInput")?.value.toLowerCase();
   const filteredData = currentData.filter((user) => {
     return (
       user.first_name.toLowerCase().includes(searchInput) ||
