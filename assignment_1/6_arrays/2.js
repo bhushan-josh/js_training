@@ -20,10 +20,10 @@ console.log(array);
 array.sort();
 console.log(array); 
 
-const arr = array.filter((i) => i % 2 == 0);
+const arr = array.filter((i) => i % 2 === 0);
 console.log(arr); 
 
-const brr = array.find((i) => i == 7);
+const brr = array.find((i) => i === 7);
 console.log(brr); 
 
 const crr = array.map((i) => i + 10);

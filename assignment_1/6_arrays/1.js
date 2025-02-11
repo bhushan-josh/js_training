@@ -57,7 +57,7 @@ const Array = [{
 // const filterByName = (str) => {
 //   let newArr = [];
 //   for(let obj of Array){
-//     if (obj.first_name == str){
+//     if (obj.first_name === str){
 //       newArr.push(obj);
 //     }
 //   }
@@ -91,7 +91,7 @@ const Array = [{
 const getById = (number) => {
   let newArr = [];
   for(let obj of Array){
-    if (obj.id == number){
+    if (obj.id === number){
       newArr.push(obj);
     }
   }
