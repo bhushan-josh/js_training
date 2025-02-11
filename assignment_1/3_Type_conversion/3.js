@@ -3,7 +3,7 @@
 
 let Arr = new Array(25);
 
-for (let i = 0; i < Arr.length; ) {
+for (let i = 0; i < Arr.length;) {
   Arr[i] = ++i;
 }
 

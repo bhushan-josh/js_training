@@ -7,7 +7,7 @@ let age = 25;
 
 if (age > 0 && age <= 12) {
   console.log("child");
-} else if (age >= 13 && age <= 18) {
+} else if (age <= 18) {
   console.log("teen");
 } else if (age > 18) {
   console.log("adult");
